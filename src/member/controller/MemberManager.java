@@ -20,6 +20,10 @@ public class MemberManager {
 		
 	}
 	
+	public void searchName() {
+		
+	}
+	
 	public void searchEmail() {
 		
 	}
