@@ -6,7 +6,7 @@ import member.model.vo.Member;
 
 public class MemberManager {
 	
-	private static Member[] marr = new Member[2];
+	private static Member[] marr = new Member[3];
 	private static int ctn = 0;
 	private Scanner sc = new Scanner(System.in);
 	
@@ -34,15 +34,21 @@ public class MemberManager {
 			++ctn;
 		}
 		System.out.println("입력이 완료되었습니다. 메인 메뉴로 돌아갑니다.");
-		System.out.println(ctn);
-		
+		System.out.println();
 	}
 	
 	public void searchId() {
 		System.out.print("검색할 아이디를 입력하세요 : ");
 		String srch = sc.nextLine();
+		int count = 0;
 		for(int i = 0; i < marr.length; i++) {
-//			marr[i].getUserId()
+			if(marr[i].getUserId().equals(srch)) {
+				count++;
+				printOne(marr[i]); break; 
+			} 
+		}
+		if(count == 0) {
+			System.out.println("검색한 회원 정보가 존재하지 않습니다.");
 		}
 	}
 	
@@ -79,7 +85,12 @@ public class MemberManager {
 	}
 	
 	public void printOne(Member m) {
-		System.out.println();
+		System.out.println("아이디 : " + m.getUserId());
+		System.out.println("비밀번호 : " + m.getUserPwd());
+		System.out.println("이름 : " + m.getUserName());
+		System.out.println("나이 : " + m.getAge());
+		System.out.println("성별 : " + m.getGender());
+		System.out.println("이메일 : " + m.getEmail());
 		
 	}
 
