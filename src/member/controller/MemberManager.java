@@ -6,7 +6,7 @@ import member.model.vo.Member;
 
 public class MemberManager {
 	
-	private static Member[] marr = new Member[5];
+	private static Member[] marr = new Member[10];
 	private static int ctn = 0;
 	private Scanner sc = new Scanner(System.in);
 	
@@ -35,7 +35,7 @@ public class MemberManager {
 		}
 		System.out.println("입력이 완료되었습니다. 메인 메뉴로 돌아갑니다.");
 		System.out.println();
-		System.out.println("사람 수 : " + ctn);
+//		System.out.println("사람 수 : " + ctn);
 	}
 	
 	public void searchId() {
@@ -116,7 +116,7 @@ public class MemberManager {
 				count++;
 				System.out.print("변경할 이름을 입력하세요 : ");
 				String nName = sc.nextLine();
-				marr[i].setUserPwd(nName);
+				marr[i].setUserName(nName);
 				System.out.println("이름 수정이 완료되었습니다.");
 				System.out.println();
 			} 
@@ -136,7 +136,7 @@ public class MemberManager {
 				count++;
 				System.out.print("변경할 이메일을 입력하세요 : ");
 				String nEmail = sc.nextLine();
-				marr[i].setUserPwd(nEmail);
+				marr[i].setEmail(nEmail);
 				System.out.println("이메일 수정이 완료되었습니다.");
 				System.out.println();
 			} 
