@@ -50,12 +50,13 @@ public class MemberMenu {
 			System.out.println("===========================");
 			System.out.print("메뉴 번호를 입력하세요 : ");
 			int serMenu = sc.nextInt();
+			System.out.println();
 			
 			switch(serMenu){
 			case 1 : mm.searchId(); break;
 			case 2 : mm.searchName(); break;
 			case 3 : mm.searchEmail(); break;
-			case 9 : System.out.println("메인메뉴로 이동합니다."); return;
+			case 9 : System.out.println("메인메뉴로 이동합니다.\n"); return;
 			}
 			
 		}
@@ -74,12 +75,13 @@ public class MemberMenu {
 			System.out.println("===========================");
 			System.out.print("메뉴 번호를 입력하세요 : ");
 			int upMenu = sc.nextInt();
+			System.out.println();
 			
 			switch(upMenu) {
 			case 1 : mm.updatePwd(); break;
 			case 2 : mm.updateName(); break;
 			case 3 : mm.updateEmail(); break;
-			case 9 : System.out.println("메인메뉴로 이동합니다."); return;
+			case 9 : System.out.println("메인메뉴로 이동합니다.\n"); return;
 			}
 		}
 		
@@ -96,11 +98,12 @@ public class MemberMenu {
 			System.out.println("===========================");
 			System.out.print("메뉴 번호를 입력하세요 : ");
 			int delMenu = sc.nextInt();
+			System.out.println();
 			
 			switch(delMenu) {
 			case 1 : mm.deleteOne(); break;
 			case 2 : mm.deleteAll(); break;
-			case 9 : System.out.println("메인메뉴로 이동합니다."); return;
+			case 9 : System.out.println("메인메뉴로 이동합니다.\n"); return;
 			}
 		}
 		
