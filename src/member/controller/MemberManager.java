@@ -6,7 +6,7 @@ import member.model.vo.Member;
 
 public class MemberManager {
 	
-	private static Member[] marr = new Member[3];
+	private static Member[] marr = new Member[5];
 	private static int ctn = 0;
 	private Scanner sc = new Scanner(System.in);
 	
@@ -42,7 +42,7 @@ public class MemberManager {
 		System.out.print("검색할 아이디를 입력하세요 : ");
 		String srch = sc.nextLine();
 		int count = 0;
-		for(int i = 0; i < marr.length; i++) {
+		for(int i = 0; i < ctn; i++) {
 			if(marr[i].getUserId().equals(srch)) {
 				count++;
 				printOne(marr[i]); break; 
@@ -58,7 +58,7 @@ public class MemberManager {
 		System.out.print("검색할 이름를 입력하세요 : ");
 		String srch = sc.nextLine();
 		int count = 0;
-		for(int i = 0; i < marr.length; i++) {
+		for(int i = 0; i < ctn; i++) {
 			if(marr[i].getUserName().equals(srch)) {
 				count++;
 				printOne(marr[i]); break; 
@@ -75,7 +75,7 @@ public class MemberManager {
 		System.out.print("검색할 이메일를 입력하세요 : ");
 		String srch = sc.nextLine();
 		int count = 0;
-		for(int i = 0; i < marr.length; i++) {
+		for(int i = 0; i < ctn; i++) {
 			if(marr[i].getEmail().equals(srch)) {
 				count++;
 				printOne(marr[i]); break; 
@@ -91,7 +91,7 @@ public class MemberManager {
 		System.out.print("수정할 회원의 아이디를 입력하세요 : ");
 		String updt = sc.nextLine();
 		int count = 0;
-		for(int i = 0; i < marr.length; i++) {
+		for(int i = 0; i < ctn; i++) {
 			if(marr[i].getUserId().equals(updt)) {
 				count++;
 				System.out.print("변경할 비밀번호를 입력하세요 : ");
@@ -111,7 +111,7 @@ public class MemberManager {
 		System.out.print("수정할 회원의 아이디를 입력하세요 : ");
 		String updt = sc.nextLine();
 		int count = 0;
-		for(int i = 0; i < marr.length; i++) {
+		for(int i = 0; i < ctn; i++) {
 			if(marr[i].getUserId().equals(updt)) {
 				count++;
 				System.out.print("변경할 이름을 입력하세요 : ");
@@ -131,7 +131,7 @@ public class MemberManager {
 		System.out.print("수정할 회원의 아이디를 입력하세요 : ");
 		String updt = sc.nextLine();
 		int count = 0;
-		for(int i = 0; i < marr.length; i++) {
+		for(int i = 0; i < ctn; i++) {
 			if(marr[i].getUserId().equals(updt)) {
 				count++;
 				System.out.print("변경할 이메일을 입력하세요 : ");
@@ -148,7 +148,24 @@ public class MemberManager {
 	}
 	
 	public void deleteOne() {
-		
+		System.out.print("탈퇴할 회원의 아이디를 입력하세요 : ");
+		String del = sc.nextLine();
+		int count = 0;
+		for(int i = 0; i < ctn; i++) {
+			if(marr[i].getUserId().equals(del)) {
+				count++;
+				ctn--;
+				for(int j = i; j < ctn; j++) {
+					marr[j] = marr[j+1];
+				}
+				System.out.println("회원탈퇴가 완료되었습니다.");
+				System.out.println();
+			} 
+		}
+		if(count == 0) {
+			System.out.println("삭제할 회원 정보가 존재하지 않습니다.");
+			System.out.println();
+		}
 	}
 	
 	public void deleteAll() {
