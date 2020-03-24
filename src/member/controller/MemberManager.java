@@ -174,7 +174,7 @@ public class MemberManager {
 			marr[i].setUserPwd("");
 			marr[i].setUserName("");
 			marr[i].setAge(0);
-			marr[i].setGender(' ');
+			marr[i].setGender('\u0000');
 			marr[i].setEmail("");
 		}
 		ctn = 0;
